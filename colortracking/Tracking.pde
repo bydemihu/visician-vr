@@ -25,7 +25,7 @@ PVector trackColor(color trackColor) {
       if (d < threshold*threshold) {
         stroke(255);
         strokeWeight(1);
-        point(video.width - x, y);
+        //point(video.width - x, y);  draw a point at any pixel that passes the threshold
         avgX += video.width - x;
         avgY += y;
         count++;
@@ -52,7 +52,7 @@ PVector trackColor(color trackColor) {
   }
   
   // return the tracked color position
-  return new PVector(avgX, avgY);
+  return new PVector(avgX, avgY);  // the issue is this returns 0, 0 when not tracking
 }
 
 void displayVideo() {
@@ -63,6 +63,8 @@ void displayVideo() {
   scale(-1, 1);
   image(video, 0, 0, video.width, video.height);
   popMatrix();
+  
+  //video is 640 x 480
 }
 
 // distance func
