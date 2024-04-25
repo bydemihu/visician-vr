@@ -56,6 +56,12 @@ PVector trackColor(color trackColor) {
 }
 
 void displayVideo() {
+  fill(darkclear);
+  strokeWeight(3);
+  stroke(blue);
+  rect(b, b, 620, height-2*b, 30);
+  // video bg
+  
   video.loadPixels();
 
   pushMatrix();
